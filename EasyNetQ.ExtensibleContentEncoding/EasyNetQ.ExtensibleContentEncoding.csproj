@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <DocumentationFile>bin\$(Configuration)\net451\EasyNetQ.ExtensibleContentEncoding.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Matt Davey</Authors>
+    <Description>An extensible EasyNetQ message intercepter which is content encoding aware.</Description>
+    <Copyright>© Matt Davey 2017</Copyright>
+    <PackageProjectUrl>https://github.com/Matthew-Davey/EasyNetQ.ExtensibleContentEncoding</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Matthew-Davey/EasyNetQ.ExtensibleContentEncoding/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Matthew-Davey/EasyNetQ.ExtensibleContentEncoding.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>easynetq rabbitmq amqp content-encoding gzip deflate brotli</PackageTags>
+    <AssemblyName>EasyNetQ.ExtensibleContentEncoding</AssemblyName>
+    <RootNamespace>EasyNetQ.ExtensibleContentEncoding</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BrotliSharpLib" Version="0.2.1" />
+    <PackageReference Include="EasyNetQ" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>

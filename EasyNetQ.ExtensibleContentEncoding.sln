@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNetQ.ExtensibleContentEncoding", "EasyNetQ.ExtensibleContentEncoding\EasyNetQ.ExtensibleContentEncoding.csproj", "{7DB45AB1-3AB9-4FCA-8B3E-18D38771D720}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNetQ.ExtensibleContentEncoding.Tests", "EasyNetQ.ExtensibleContentEncoding.Tests\EasyNetQ.ExtensibleContentEncoding.Tests.csproj", "{611084B6-9DF7-41FA-BFAD-2DE51031BDDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNetQ.ExtensibleContentEncoding.TestBench.Consumer", "EasyNetQ.ExtensibleContentEncoding.TestBench.Consumer\EasyNetQ.ExtensibleContentEncoding.TestBench.Consumer.csproj", "{A6B65993-E5D0-48C1-B50B-FB4216054B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetQ.ExtensibleContentEncoding.TestBench.Producer", "EasyNetQ.ExtensibleContentEncoding.TestBench.Producer\EasyNetQ.ExtensibleContentEncoding.TestBench.Producer.csproj", "{B05EC2C3-9117-4F6D-8F56-BBBF12269651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyNetQ.ExtensibleContentEncoding.TestBench.Messages", "EasyNetQ.ExtensibleContentEncoding.TestBench.Messages\EasyNetQ.ExtensibleContentEncoding.TestBench.Messages.csproj", "{AB78DE01-B2BF-4AA7-9875-BA6DC0989911}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestBench", "TestBench", "{024BBAA7-69FB-442A-B72A-965CDC07A8FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB45AB1-3AB9-4FCA-8B3E-18D38771D720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB45AB1-3AB9-4FCA-8B3E-18D38771D720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB45AB1-3AB9-4FCA-8B3E-18D38771D720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB45AB1-3AB9-4FCA-8B3E-18D38771D720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611084B6-9DF7-41FA-BFAD-2DE51031BDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611084B6-9DF7-41FA-BFAD-2DE51031BDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611084B6-9DF7-41FA-BFAD-2DE51031BDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611084B6-9DF7-41FA-BFAD-2DE51031BDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B65993-E5D0-48C1-B50B-FB4216054B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B65993-E5D0-48C1-B50B-FB4216054B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B65993-E5D0-48C1-B50B-FB4216054B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B65993-E5D0-48C1-B50B-FB4216054B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05EC2C3-9117-4F6D-8F56-BBBF12269651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05EC2C3-9117-4F6D-8F56-BBBF12269651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05EC2C3-9117-4F6D-8F56-BBBF12269651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05EC2C3-9117-4F6D-8F56-BBBF12269651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB78DE01-B2BF-4AA7-9875-BA6DC0989911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB78DE01-B2BF-4AA7-9875-BA6DC0989911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB78DE01-B2BF-4AA7-9875-BA6DC0989911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB78DE01-B2BF-4AA7-9875-BA6DC0989911}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6B65993-E5D0-48C1-B50B-FB4216054B99} = {024BBAA7-69FB-442A-B72A-965CDC07A8FB}
+		{B05EC2C3-9117-4F6D-8F56-BBBF12269651} = {024BBAA7-69FB-442A-B72A-965CDC07A8FB}
+		{AB78DE01-B2BF-4AA7-9875-BA6DC0989911} = {024BBAA7-69FB-442A-B72A-965CDC07A8FB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F0C9426-8F05-41B2-98DB-C510B72124B7}
+	EndGlobalSection
+EndGlobal
