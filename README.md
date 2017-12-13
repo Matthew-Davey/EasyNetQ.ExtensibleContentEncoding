@@ -1,6 +1,8 @@
 # EasyNetQ.ExtensibleContentEncoding
 An extensible EasyNetQ message intercepter which is content encoding aware.
 
+[![Nuget Downloads](https://img.shields.io/nuget/dt/EasyNetQ.ExtensibleContentEncoding.svg)](https://www.nuget.org/packages/EasyNetQ.ExtensibleContentEncoding/) [![Nuget Version](https://img.shields.io/nuget/v/EasyNetQ.ExtensibleContentEncoding.svg)](https://www.nuget.org/packages/EasyNetQ.ExtensibleContentEncoding/)
+
 ExtensibleContentEncoding serves two main purposes:
 * Interoperabillity with other messaging middleware. EasyNetQ is a very opinionated framework and integrates flawlessly if used across the board. However it can become a little tricky when integrating with other messaging frameworks. ExtensibleContentEncoding allows you to consume messages from multiple different message sources which may be encoded or compressed differently.
 * Zero downtime migration. Although EasyNetQ already supports gzip message compression, it's a global switch. Once enabled it expects *all* messages to be gzip encoded. This can cause problems if you want to migrate from uncompressed to compressed messages, or from one compression algorithm to another. With a global switch you would have to disable upstream producers, allow your consumer to drain the message queue, and then upgrade both producers and consumers to produce/consume compressed messages. With ExtensibleContentEncoding, you can make your downstream consumers ready for compressed messages before they're produced. Once the consumers are prepared, the producers can start producing compressed messages. You can do a phased rollout of the producers, without having to drain any queues. A queue can contain a mixture of both compressed and uncompressed messages during the migration phase.
