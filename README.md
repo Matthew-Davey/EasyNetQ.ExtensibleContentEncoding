@@ -60,8 +60,8 @@ class Base64Codec : ICodec {
 var bus = RabbitHutch.CreateBus("host=localhost;username=guest;password=guest", registrar => {
     registrar.EnableInterception(interception => {
         interception.EnableExtensibleContentEncoding(codecs => {
-			codecs["base64"] = new Base64Codec();
-		});
+            codecs["base64"] = new Base64Codec();
+        });
     });
 });
 ```
