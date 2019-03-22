@@ -1,7 +1,7 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding {
-    using System;
-    using global::EasyNetQ.Interception;
+﻿using System;
+using EasyNetQ.Interception;
 
+namespace EasyNetQ.ExtensibleContentEncoding {
     /// <summary>
     /// Defines extension methods for the <see cref="IInterceptorRegistrator"/> interface.
     /// </summary>

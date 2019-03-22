@@ -1,14 +1,13 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using EasyNetQ.ExtensibleContentEncoding.Codecs;
+using EasyNetQ.Interception;
+
+namespace EasyNetQ.ExtensibleContentEncoding
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text.RegularExpressions;
-    using EasyNetQ.ExtensibleContentEncoding.Codecs;
-
-    using global::EasyNetQ.Interception;
-
     /// <summary>
     /// Defines an implementation of <see cref="IProduceConsumeInterceptor"/> which encodes and decodes message content
     /// based on the value of the 'content_encoding' attribute.
@@ -60,7 +59,8 @@
             }
         }
 
-        IEnumerable<ICodec> GetCodecSequence(MessageProperties properties) {
+        IEnumerable<ICodec> GetCodecSequence(MessageProperties properties)
+        {
             if (properties.ContentEncodingPresent) {
                 try {
                     return Regex.Matches(properties.ContentEncoding, @"(\w+)")
@@ -72,9 +72,8 @@
                     throw new Exception("Unable to parse content_encoding attribute: " + properties.ContentEncoding);
                 }
             }
-            else {
-                return new [] { new IdentityCodec() };
-            }
+
+            return new [] { new IdentityCodec() };
         }
     }
 }

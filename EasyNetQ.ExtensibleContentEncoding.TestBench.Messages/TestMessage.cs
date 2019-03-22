@@ -1,12 +1,12 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.TestBench.Messages {
-    using System;
-    using System.Runtime.Serialization;
-    using EasyNetQ.MetaData.Abstractions;
+﻿using System;
+using System.Runtime.Serialization;
+using EasyNetQ.MetaData.Abstractions;
 
+namespace EasyNetQ.ExtensibleContentEncoding.TestBench.Messages {
     public class TestMessage {
-        public String Content { get; set; }
+        public string Content { get; set; }
 
         [MessageProperty(Property.ContentEncoding), IgnoreDataMember]
-        public String ContentEncoding { get; set; }
+        public string ContentEncoding { get; set; }
     }
 }

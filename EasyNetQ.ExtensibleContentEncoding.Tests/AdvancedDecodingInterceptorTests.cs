@@ -1,13 +1,12 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Tests {
-    using System;
-    using System.IO;
-    using System.Security.Cryptography;
-    using System.Text;
-    using EasyNetQ.ExtensibleContentEncoding.Codecs;
-    using Xunit;
+﻿using System;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using EasyNetQ.ExtensibleContentEncoding.Codecs;
+using EasyNetQ.Interception;
+using Xunit;
 
-    using global::EasyNetQ.Interception;
-
+namespace EasyNetQ.ExtensibleContentEncoding.Tests {
     public class AdvancedDecodingInterceptorTests {
         [Fact]
         public void CodecIdentity() {
@@ -38,7 +37,7 @@
             var subject = new ExtensibleContentEncodingInterceptor();
             var encoded = subject.OnProduce(input);
 
-            Assert.Equal(new Byte[] { 31, 139, 8, 0, 0, 0, 0, 0, 0, 11, 43, 73, 45, 46, 1, 0, 12, 126, 127, 216, 4, 0, 0, 0 }, encoded.Body);
+            Assert.Equal(new byte[] { 31, 139, 8, 0, 0, 0, 0, 0, 0, 3, 43, 73, 45, 46, 1, 0, 12, 126, 127, 216, 4, 0, 0, 0 }, encoded.Body);
 
             var decoded = subject.OnConsume(encoded);
 
@@ -56,7 +55,7 @@
             var subject = new ExtensibleContentEncodingInterceptor();
             var encoded = subject.OnProduce(input);
 
-            Assert.Equal(new Byte[] { 43, 73, 45, 46, 1, 0 }, encoded.Body);
+            Assert.Equal(new byte[] { 43, 73, 45, 46, 1, 0 }, encoded.Body);
 
             var decoded = subject.OnConsume(encoded);
 
@@ -74,7 +73,7 @@
             var subject = new ExtensibleContentEncodingInterceptor();
             var encoded = subject.OnProduce(input);
 
-            Assert.Equal(new Byte[] { 139, 1, 128, 116, 101, 115, 116, 3 }, encoded.Body);
+            Assert.Equal(new byte[] { 139, 1, 128, 116, 101, 115, 116, 3 }, encoded.Body);
 
             var decoded = subject.OnConsume(encoded);
 
@@ -92,7 +91,7 @@
             var subject = new ExtensibleContentEncodingInterceptor();
             var encoded = subject.OnProduce(input);
 
-            Assert.Equal(new Byte[] { 147, 239, 230, 96, 0, 3, 110, 109, 79, 93, 61, 70, 6, 158, 186, 250, 27, 44, 64, 46, 0 }, encoded.Body);
+            Assert.Equal(new byte[] { 147, 239, 230, 96, 0, 3, 102, 109, 79, 93, 61, 70, 6, 158, 186, 250, 27, 44, 64, 46, 0 }, encoded.Body);
 
             var decoded = subject.OnConsume(encoded);
 

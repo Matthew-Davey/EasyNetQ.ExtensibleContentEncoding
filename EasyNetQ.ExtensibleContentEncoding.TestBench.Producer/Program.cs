@@ -1,17 +1,15 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.TestBench.Producer {
-    using System;
-    using EasyNetQ.ExtensibleContentEncoding;
-    using EasyNetQ.ExtensibleContentEncoding.TestBench.Messages;
-    using EasyNetQ.MetaData;
+﻿using System;
+using EasyNetQ.ExtensibleContentEncoding.TestBench.Messages;
+using EasyNetQ.Interception;
+using EasyNetQ.Logging;
+using EasyNetQ.MetaData;
 
-    using global::EasyNetQ;
-    using global::EasyNetQ.Interception;
-    using global::EasyNetQ.Loggers;
-
+namespace EasyNetQ.ExtensibleContentEncoding.TestBench.Producer {
     class Program {
         static void Main() {
+            LogProvider.SetCurrentLogProvider(ConsoleLogProvider.Instance);
+
             var bus = RabbitHutch.CreateBus("host=localhost;username=guest;password=guest", registrar => {
-                registrar.Register<IEasyNetQLogger>(_ => new ConsoleLogger());
                 registrar.EnableMessageMetaDataBinding();
 
                 registrar.EnableInterception(interception => {
