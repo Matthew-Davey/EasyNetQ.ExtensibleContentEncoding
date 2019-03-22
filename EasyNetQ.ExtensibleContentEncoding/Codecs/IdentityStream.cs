@@ -1,7 +1,7 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
-    using System;
-    using System.IO;
+﻿using System;
+using System.IO;
 
+namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
     class IdentityStream : Stream {
         readonly Stream _inner;
 
@@ -9,12 +9,12 @@
             _inner = inner ?? throw new ArgumentNullException(nameof(inner));
         }
 
-        public override Boolean CanRead => _inner.CanRead;
-        public override Boolean CanSeek => _inner.CanSeek;
-        public override Boolean CanWrite => _inner.CanWrite;
-        public override Int64 Length => _inner.Length;
+        public override bool CanRead => _inner.CanRead;
+        public override bool CanSeek => _inner.CanSeek;
+        public override bool CanWrite => _inner.CanWrite;
+        public override long Length => _inner.Length;
 
-        public override Int64 Position {
+        public override long Position {
             get => _inner.Position;
             set => _inner.Position = value;
         }
@@ -23,23 +23,23 @@
             _inner.Flush();
         }
 
-        public override Int32 Read(Byte[] buffer, Int32 offset, Int32 count) {
+        public override int Read(byte[] buffer, int offset, int count) {
             return _inner.Read(buffer, offset, count);
         }
 
-        public override Int64 Seek(Int64 offset, SeekOrigin origin) {
+        public override long Seek(long offset, SeekOrigin origin) {
             return _inner.Seek(offset, origin);
         }
 
-        public override void SetLength(Int64 value) {
+        public override void SetLength(long value) {
             _inner.SetLength(value);
         }
 
-        public override void Write(Byte[] buffer, Int32 offset, Int32 count) {
+        public override void Write(byte[] buffer, int offset, int count) {
             _inner.Write(buffer, offset, count);
         }
 
-        protected override void Dispose(Boolean disposing) {
+        protected override void Dispose(bool disposing) {
             base.Dispose(disposing);
         }
     }

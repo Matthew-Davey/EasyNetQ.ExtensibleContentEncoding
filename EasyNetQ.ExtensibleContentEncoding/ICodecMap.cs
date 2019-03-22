@@ -1,7 +1,7 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding {
-    using System;
-    using EasyNetQ.ExtensibleContentEncoding.Codecs;
+﻿using System;
+using EasyNetQ.ExtensibleContentEncoding.Codecs;
 
+namespace EasyNetQ.ExtensibleContentEncoding {
     /// <summary>
     /// Defines mapping between content-encoding header values and <see cref="ICodec"/> objects.
     /// </summary>
@@ -14,6 +14,6 @@
         /// <exception cref="UnknownEncodingException">
         /// Thrown when trying to retrieve an encoding for which there is no <see cref="ICodec"/> associated.
         /// </exception>
-        ICodec this[String key] { get; set; }
+        ICodec this[string key] { get; set; }
     }
 }

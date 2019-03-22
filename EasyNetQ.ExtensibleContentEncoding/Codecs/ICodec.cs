@@ -1,6 +1,6 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
-    using System.IO;
+﻿using System.IO;
 
+namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
     /// <summary>
     /// Defines the interface for an object which can encode and decode message payloads, and can be assembled
     /// into a pipeline.

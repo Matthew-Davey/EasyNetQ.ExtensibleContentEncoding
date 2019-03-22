@@ -1,9 +1,9 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
-    using System;
-    using System.IO;
-    using System.IO.Compression;
-    using BrotliSharpLib;
+﻿using System;
+using System.IO;
+using System.IO.Compression;
+using BrotliSharpLib;
 
+namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
     class BrotliCodec : ICodec {
         public Stream AddEncodingStage(Stream baseStream) {
             if (baseStream == null)

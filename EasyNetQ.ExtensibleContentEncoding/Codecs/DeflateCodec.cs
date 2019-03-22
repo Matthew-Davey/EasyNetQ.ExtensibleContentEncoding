@@ -1,8 +1,8 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
-    using System;
-    using System.IO;
-    using System.IO.Compression;
+﻿using System;
+using System.IO;
+using System.IO.Compression;
 
+namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
     class DeflateCodec : ICodec {
         public Stream AddEncodingStage(Stream baseStream) {
             if (baseStream == null)

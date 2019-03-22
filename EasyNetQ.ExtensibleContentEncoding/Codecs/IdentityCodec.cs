@@ -1,7 +1,7 @@
-﻿namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
-    using System;
-    using System.IO;
+﻿using System;
+using System.IO;
 
+namespace EasyNetQ.ExtensibleContentEncoding.Codecs {
     class IdentityCodec : ICodec {
         public Stream AddEncodingStage(Stream baseStream) {
             if (baseStream == null)
